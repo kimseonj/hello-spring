@@ -43,7 +43,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "target/*.jar"
-          target: "~/"
+          target: "/home/test/"
           rm: false
     - name: execute shell script
         uses: appleboy/ssh-action@master
@@ -53,4 +53,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
-          script: "./startup.sh"
+          script: "bash ~/startup.sh"
